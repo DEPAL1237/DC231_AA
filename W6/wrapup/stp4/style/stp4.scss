@@ -21,23 +21,21 @@
   /* background-color: blue; */
 }
 
-.nav .wrapper {
-  display: flex;
-  justify-content: space-between;
-  padding-block: 12px;
-  align-items: baseline;
-}
-
-.nav .nav__menuWrapper {
-  display: flex;
-  gap: 24px;
-  align-items: baseline;
-}
-
 .nav {
   background-color: black;
   color: white;
   font-weight: 700;
+  .wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding-block: 12px;
+    align-items: baseline;
+  }
+  &__menuWrapper {
+    display: flex;
+    gap: 24px;
+    align-items: baseline;
+  }
 }
 
 .button {
@@ -48,10 +46,9 @@
   color: white;
   font-weight: 700;
   text-align: center;
-}
-
-.button--type-text {
-  background-color: unset;
-  color: slateblue;
-  padding-inline: 0;
+  &--type-text {
+    background-color: unset;
+    color: slateblue;
+    padding-inline: 0;
+  }
 }
