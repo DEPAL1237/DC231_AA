@@ -1,0 +1,87 @@
+*,
+* ::after,
+*::before {
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: light dark;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui;
+  font-size: 1.125rem;
+  line-height: 1.5;
+}
+
+.wrapper {
+  max-width: 70ch;
+  margin-inline: auto;
+  padding-inline: 2rem;
+}
+
+.site-title {
+  font-size: 3rem;
+  text-align: center;
+  //   글자만 적용을 해조라 센터
+}
+
+section {
+  padding-block: 5rem;
+  .section-title {
+    font-size: 2.25rem;
+  }
+  &:nth-of-type(odd) {
+    background-color: darkgray;
+  }
+}
+
+.diagonal {
+  position: relative;
+  //   background: linear-gradient(
+  //     45deg in oklab,
+  //     oklch(80% 0.5 340) 0%,
+  //     oklch(80% 0.5 200) 100%
+  //   );
+  background-color: darkgray;
+  isolation: isolate;
+  & ::after {
+    content: "";
+    position: absolute;
+    background: linear-gradient(
+      45deg in oklab,
+      oklch(80% 0.5 340) 0%,
+      oklch(80% 0.5 200) 100%
+    );
+    inset: 0;
+    transform: skewY(-5deg);
+    z-index: -1;
+    // 안의 모든 요소의 친구들에게는 이 요소가 있다. 양수로 큰 값일 수록 쓴다
+    // 하지만 0이 아닌? 작은? 친구들이 아니면 뒤로 다 보내버림
+  }
+}
+
+// 포괄적으로 쓰고 싶음 백그라운드로 쓰십쇼 / 그라디언트 만들 수 있는 사이트 gradient.style
+//   after와 before
+//   css에게, 골조를 바꿀 수 있는 기능을 주마. 인테리어가 애매하면 가벽을 칠 수 있잖슴>? 그런거임
+//   <tag>
+//   요기에 before 만들어줌. 안쪽 제일 첫번 째에.
+//   쏼라 쏼라
+//   after는 여기. 끝나기 바로 직전
+//   </tag>
+
+// nth란 : th_번째 타입, 차일드가 있다. 원래는 숫자가 들어가는데 짝수는 이븐, 홀수는 오드라고 한다. 각각을 골라줌
+// 타입과 파일드의 작동 방식이 다른데, 헤더가 있고 섹션이 다수 있는데, 섹션한테 타입이라고 하면 섹션들 중 1, 2, 3, 4, 이런식으로 오고
+// 차일드로 하면 섹션이라는 녀석의 엄마, 부모 요소로부터 몇 번째 자식이냐를 따짐. 섹션이 아닌 것도 따진다는 것이다.
+// 차일드- 오드를 넣으면 예상했던 거랑 조금 다른 양상이 나와버린다. 순서가 바뀌니까. 옛날에는 차일드만 있었다.
+// 근데 의문. 그렇다면 차일드를 넣고 이븐을 넣으면 해결 되는게 아닌지?
+
+// 앱솔루트 : 나라는 녀석은 자유를 찾겠다. 속박되지 않겠다!! 하지만 잡으려면?
+// 부모요소중 포지션이 스테틱이 아닌 경우를 찾아감.
+
+// inset: 0;
+// // top: 0;
+// // right: 0;
+// // bottom: 0;
+// // left: 0;

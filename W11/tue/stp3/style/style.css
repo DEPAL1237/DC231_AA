@@ -112,7 +112,7 @@ body {
   width: 100%;
   max-height: 11.75rem;
   -o-object-fit: cover;
-  object-fit: cover;
+     object-fit: cover;
 }
 .card__bottom {
   display: flex;
@@ -155,8 +155,8 @@ body {
   line-height: 1.25rem;
   text-transform: capitalize;
   -webkit-user-select: none;
-  -moz-user-select: none;
-  user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 .button--type-outline {
   background-color: unset;
