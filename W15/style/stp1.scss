@@ -1,0 +1,362 @@
+@import url(theme.dark.css) (prefers-color-scheme: dark);
+@import url(theme.light.css) (prefers-color-scheme: light);
+
+$wrapper-padding-inline: 2rem;
+$min-height: 2rem;
+$progressBar-height: 1rem;
+
+$bg: var(--bg);
+$bgVariant: var(--bgVariant);
+$txt: var(--txt);
+$surface-transparent: var(--surface-transparent);
+$surface: var(--Surface);
+$onSurface: var(--onSurface);
+$accent: var(--accent);
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.hide {
+  display: none;
+}
+
+html {
+  color-scheme: light dark;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui;
+  font-size: 1.125rem;
+  line-height: 1.7;
+  background: $bg;
+  color: $txt;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: calc(80ch + 2 * $wrapper-padding-inline);
+  min-height: max(100dvh, $min-height);
+  margin-inline: auto;
+  padding-inline: $wrapper-padding-inline;
+  overflow: hidden;
+}
+
+header {
+  text-align: center;
+  // text-wrap: balance;
+  word-break: keep-all;
+}
+
+section:nth-of-type(odd) {
+  background-color: $bgVariant;
+}
+
+.stickyWrapper {
+  position: relative;
+  display: grid;
+  grid-template-columns: fit-content(0) 1fr;
+  grid-template-rows: 1fr;
+}
+
+main {
+  z-index: 1;
+  grid-column: 1 / span 2;
+  grid-row: 1;
+}
+
+aside {
+  position: sticky;
+  top: 0;
+  z-index: 3;
+  grid-column: 1;
+  grid-row: 1;
+  width: fit-content;
+  height: max(100dvh, $min-height);
+  padding-inline: 1rem 1.5rem;
+  border-radius: 0 1rem 1rem 0;
+  background-color: $surface-transparent;
+  backdrop-filter: blur(0.25rem);
+  font-size: 0.875rem;
+
+  ol {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%;
+
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    li {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      color: $onSurface;
+      font-weight: 600;
+      text-transform: capitalize;
+      transition: color 150ms ease-out;
+
+      &::before {
+        content: "";
+        width: 1rem;
+        height: 1rem;
+        margin-top: 0.125rem;
+        transition: border-color 150ms ease-out;
+        border: 0.125rem solid $onSurface;
+        border-radius: 9999px;
+      }
+      &:hover {
+        color: $accent;
+        &::before {
+          border-color: $accent;
+        }
+      }
+    }
+  }
+  a {
+    text-decoration: none;
+  }
+}
+
+.progressBar {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background-color: rgb(109, 90, 176);
+  grid-column: 1 / span 2;
+  grid-row: 1;
+  width: 100%;
+  height: $progressBar-height;
+  background-color: $surface;
+  .indicator {
+    position: absolute;
+    // transform: scaleX(50%);
+    transform-origin: 0;
+    background-color: $accent;
+    inset: 0;
+  }
+}
+
+footer {
+  .wrapper {
+    min-height: max(100dvh, $min-height);
+  }
+}
+
+#title {
+  font-size: 50px;
+  filter: blur(0.1875rem);
+  transition: all 500ms ease-in-out;
+}
+#title:hover {
+  filter: blur(0);
+  transition: all 500ms ease-in-out;
+}
+
+#section3 {
+  h3.animTarget {
+    filter: blur(0.125rem);
+    color: transparent;
+    transition: all 700ms ease-in-out;
+  }
+  &.triggered {
+    .animTarget {
+      filter: blur(0);
+      color: $txt;
+    }
+  }
+}
+
+#section3 {
+  p.animTarget {
+    filter: blur(0.125rem);
+    color: transparent;
+    transition: all 1500ms ease-in-out;
+  }
+  &.triggered {
+    .animTarget {
+      filter: blur(0);
+      color: $txt;
+    }
+  }
+}
+
+#section4 {
+  .animTarget {
+    transform: translateX(100vw);
+    filter: blur(0.125rem);
+    transition: transform 500ms ease-in-out;
+  }
+  &.triggered {
+    .animTarget {
+      transform: translateX(0);
+      filter: blur(0);
+    }
+  }
+}
+
+#section1 {
+  h3.animTarget {
+    font-size: larger;
+  }
+  &.triggered {
+    h3.animTarget {
+      animation: wiggle 2s ease-out;
+    }
+  }
+}
+
+#section1 {
+  h2 {
+    filter: blur(0.1875rem);
+    transition: all 700ms ease-out;
+  }
+  h2:hover {
+    filter: blur(0);
+    color: rgb(187, 255, 0);
+    text-shadow: 0px 0px 5px rgb(0, 0, 0);
+    transition: all 300ms ease-in;
+  }
+}
+
+@keyframes wiggle {
+  0%,
+  7% {
+    transform: rotateZ(0);
+  }
+  15% {
+    transform: rotateZ(-3deg);
+  }
+  20% {
+    transform: rotateZ(5deg);
+  }
+  25% {
+    transform: rotateZ(-2deg);
+  }
+  30% {
+    transform: rotateZ(2deg);
+  }
+  35% {
+    transform: rotateZ(-1deg);
+  }
+  40%,
+  100% {
+    transform: rotateZ(0);
+  }
+}
+
+#section2 {
+  p.animTarget {
+    filter: blur(0.125rem);
+    color: transparent;
+    transition: all 1500ms ease-in-out;
+  }
+  &.triggered {
+    .animTarget {
+      filter: blur(0);
+      color: $txt;
+    }
+  }
+}
+
+#section5 {
+  p.animTarget {
+    filter: blur(0.125rem);
+    // transform: translateY(-100vw);
+    // color: transparent;
+    transition: all 500ms ease-in-out;
+  }
+  &.triggered {
+    p.animTarget {
+      filter: blur(0);
+      // transform: translateY(0);
+      color: $txt;
+    }
+  }
+}
+
+#section6 {
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+
+  p.animTarget {
+    filter: blur(0.25rem);
+    color: rgb(32, 21, 78);
+    transform: scale(50%);
+    transition: all 100ms ease-in-out;
+  }
+  &.triggered {
+    .animTarget {
+      filter: blur(0);
+      color: rgb(197, 198, 187);
+      transform: scale(100%);
+    }
+  }
+}
+
+@media (width < 66.25rem) {
+  .stickyWrapper {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto 1fr;
+  }
+
+  main {
+    grid-column: 1;
+    grid-row: 3;
+  }
+
+  aside {
+    top: $progressBar-height;
+    grid-column: 1;
+    grid-row: 3;
+    width: 100%;
+    height: fit-content;
+    padding-inline: unset;
+    border-radius: 0 0 1rem 1rem;
+    padding-block: 1rem;
+    overflow-x: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    ol {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      gap: 3rem;
+
+      a:first-of-type li {
+        margin-left: $wrapper-padding-inline;
+      }
+      a:last-of-type li {
+        margin-right: $wrapper-padding-inline;
+      }
+    }
+  }
+
+  .progressBar {
+    grid-column: 1;
+    grid-row: 1;
+  }
+}
+
+@media (width < 59.1875rem) {
+  aside {
+    ol {
+      justify-content: flex-start;
+    }
+  }
+}

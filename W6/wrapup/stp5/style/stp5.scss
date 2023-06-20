@@ -19,6 +19,21 @@
   padding-block: 64px;
 }
 
+.button {
+  width: fit-content;
+  background-color: slateblue;
+  padding: 8px 16px;
+  border-radius: 8px;
+  color: white;
+  font-weight: 700;
+  text-align: center;
+  &--type-text {
+    background-color: unset;
+    color: slateblue;
+    padding-inline: 0;
+  }
+}
+
 .nav {
   background-color: black;
   color: white;
@@ -36,17 +51,26 @@
   }
 }
 
-.button {
-  width: fit-content;
-  background-color: slateblue;
-  padding: 8px 16px;
-  border-radius: 8px;
-  color: white;
-  font-weight: 700;
+#hero1 {
   text-align: center;
-  &--type-text {
-    background-color: unset;
-    color: slateblue;
-    padding-inline: 0;
+  .button {
+    margin-inline: auto;
+  }
+  .main {
+    &__text {
+      margin-inline: auto;
+      max-width: 600px;
+      margin-bottom: 24px;
+    }
+    &__media {
+      aspect-ratio: 16 / 9;
+      background-color: aliceblue;
+    }
+  }
+  h2 {
+    margin-bottom: 16px;
+  }
+  p {
+    margin-bottom: 24px;
   }
 }
