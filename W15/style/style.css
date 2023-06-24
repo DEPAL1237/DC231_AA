@@ -39,7 +39,7 @@ li {
 .menu__top {
   display: flex;
   gap: 20px;
-  padding: 30px;
+  padding: 29px;
 }
 .menu__nav {
   z-index: 3 !important;
