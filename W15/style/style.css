@@ -11,10 +11,6 @@ body {
   user-select: none;
 }
 
-::-webkit-scrollbar {
-  display: none;
-}
-
 a {
   text-decoration: none;
   color: rgb(255, 255, 255);
@@ -22,6 +18,10 @@ a {
 
 li {
   list-style: none;
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
 
 .menu {
@@ -46,6 +46,12 @@ li {
   padding: 30px;
 }
 
+.text {
+  font-family: "Song Myung", serif;
+  color: rgb(200, 200, 200);
+  text-align: center;
+}
+
 @media (max-width: 750px) {
   .menu__nav {
     display: none;
@@ -53,6 +59,9 @@ li {
 }
 @media (min-width: 750px) {
   .menu__dis {
+    display: none;
+  }
+  .text {
     display: none;
   }
 }
