@@ -35,24 +35,21 @@ li {
   font-family: "Song Myung", serif;
   font-size: 18px;
 
-  .menu__hm {
+  &__hm {
     padding: 30px;
   }
 
-  .menu__top {
+  &__top {
     display: flex;
     gap: 20px;
+    padding: 30px;
   }
 
-  .menu__nav {
+  &__nav {
     z-index: 3 !important;
     background-color: #000f23;
     padding: 30px;
   }
-}
-
-.menu__dis {
-  padding: 30px;
 }
 
 .text {
