@@ -1,9 +1,8 @@
-@import url(theme.dark.css) (prefers-color-scheme: dark);
-@import url(theme.light.css) (prefers-color-scheme: light);
 *,
 *::before,
 *::after {
   box-sizing: border-box;
+  font-family: "Song Myung", serif;
 }
 
 .hide {
@@ -11,17 +10,53 @@
 }
 
 html {
-  color-scheme: light dark;
   scroll-behavior: smooth;
 }
 
+a {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+}
+
+.menu {
+  color: white;
+  padding: 16px;
+  display: flex;
+  background-color: #000f23;
+  justify-content: space-between;
+  font-family: "Song Myung", serif;
+  font-size: 18px;
+}
+.menu .menu__hm {
+  padding: 30px;
+}
+.menu .menu__top {
+  display: flex;
+  gap: 20px;
+}
+.menu .menu__nav {
+  z-index: 3 !important;
+  background-color: #000f23;
+  padding: 30px;
+}
+
+@media (max-width: 750px) {
+  .menu__nav {
+    display: none;
+  }
+}
+@media (min-width: 750px) {
+  .menu__dis {
+    display: none;
+  }
+}
 body {
   margin: 0;
   font-family: system-ui;
   font-size: 1.125rem;
   line-height: 1.7;
-  background: var(--bg);
-  color: var(--txt);
+  color: white;
+  background-image: linear-gradient(360deg, #d7ffec -16% -16%, #000f23 69% 69%);
 }
 
 .wrapper {
@@ -33,15 +68,6 @@ body {
   margin-inline: auto;
   padding-inline: 2rem;
   overflow: hidden;
-}
-
-header {
-  text-align: center;
-  word-break: keep-all;
-}
-
-section:nth-of-type(odd) {
-  background-color: var(--bgVariant);
 }
 
 .stickyWrapper {
@@ -133,132 +159,6 @@ footer .wrapper {
   min-height: max(100dvh, 2rem);
 }
 
-#title {
-  font-size: 50px;
-  font-family: "Song Myung", serif;
-}
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translate3d(0, 100%, 0);
-  }
-  to {
-    opacity: 1;
-    transform: translateZ(0);
-  }
-}
-#title .test_obj {
-  position: relative;
-  animation: fadeInUp 1s;
-}
-
-#section3 h3.animTarget {
-  filter: blur(0.125rem);
-  color: transparent;
-  transition: all 700ms ease-in-out;
-}
-#section3.triggered .animTarget {
-  filter: blur(0);
-  color: var(--txt);
-}
-
-#section3 p.animTarget {
-  filter: blur(0.125rem);
-  color: transparent;
-  transition: all 1500ms ease-in-out;
-}
-#section3.triggered .animTarget {
-  filter: blur(0);
-  color: var(--txt);
-}
-
-#section4 .animTarget {
-  transform: translateX(100vw);
-  filter: blur(0.125rem);
-  transition: transform 500ms ease-in-out;
-}
-#section4.triggered .animTarget {
-  transform: translateX(0);
-  filter: blur(0);
-}
-
-#section1 h3.animTarget {
-  font-size: larger;
-}
-#section1.triggered h3.animTarget {
-  animation: wiggle 2s ease-out;
-}
-
-#section1 h2 {
-  filter: blur(0.1875rem);
-  transition: all 700ms ease-out;
-}
-#section1 h2:hover {
-  filter: blur(0);
-  color: rgb(187, 255, 0);
-  text-shadow: 0px 0px 5px rgb(0, 0, 0);
-  transition: all 300ms ease-in;
-}
-
-@keyframes wiggle {
-  0%, 7% {
-    transform: rotateZ(0);
-  }
-  15% {
-    transform: rotateZ(-3deg);
-  }
-  20% {
-    transform: rotateZ(5deg);
-  }
-  25% {
-    transform: rotateZ(-2deg);
-  }
-  30% {
-    transform: rotateZ(2deg);
-  }
-  35% {
-    transform: rotateZ(-1deg);
-  }
-  40%, 100% {
-    transform: rotateZ(0);
-  }
-}
-#section2 p.animTarget {
-  filter: blur(0.125rem);
-  color: transparent;
-  transition: all 1500ms ease-in-out;
-}
-#section2.triggered .animTarget {
-  filter: blur(0);
-  color: var(--txt);
-}
-
-#section5 p.animTarget {
-  filter: blur(0.125rem);
-  transition: all 500ms ease-in-out;
-}
-#section5.triggered p.animTarget {
-  filter: blur(0);
-  color: var(--txt);
-}
-
-#section6 {
-  font-size: 30px;
-  display: flex;
-  align-items: center;
-}
-#section6 p.animTarget {
-  filter: blur(0.25rem);
-  color: rgb(32, 21, 78);
-  transform: scale(50%);
-  transition: all 100ms ease-in-out;
-}
-#section6.triggered .animTarget {
-  filter: blur(0);
-  color: rgb(197, 198, 187);
-  transform: scale(100%);
-}
-
 @media (width < 66.25rem) {
   .stickyWrapper {
     grid-template-columns: 1fr;
@@ -305,5 +205,32 @@ footer .wrapper {
 @media (width < 59.1875rem) {
   aside ol {
     justify-content: flex-start;
+  }
+}
+#section1 h1 {
+  filter: blur(0.1875rem);
+  transition: all 700ms ease-out;
+}
+#section1 h1:hover {
+  font-weight: bold;
+  filter: blur(0);
+  color: rgb(233, 238, 215);
+  text-shadow: 0px 0px 5px rgb(0, 0, 0);
+  transition: all 300ms ease-in;
+}
+
+p {
+  animation: fadein 2s;
+  -moz-animation: fadein 2s; /* Firefox */
+  -webkit-animation: fadein 2s; /* Safari and Chrome */
+  -o-animation: fadein 2s; /* Opera */
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }

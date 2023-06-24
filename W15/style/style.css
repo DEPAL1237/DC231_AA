@@ -6,6 +6,9 @@
 
 body {
   -ms-overflow-style: none;
+  -moz-user-select: -moz-none;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 ::-webkit-scrollbar {
@@ -30,9 +33,17 @@ li {
   font-family: "Song Myung", serif;
   font-size: 18px;
 }
+.menu .menu__hm {
+  padding: 30px;
+}
 .menu .menu__top {
   display: flex;
   gap: 20px;
+}
+.menu .menu__nav {
+  z-index: 3 !important;
+  background-color: #000f23;
+  padding: 30px;
 }
 
 @media (max-width: 750px) {
@@ -71,10 +82,11 @@ header .title {
 }
 
 .backSky {
+  max-width: auto;
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  position: absolute;
+  position: fixed;
 }
 
 .sky {
