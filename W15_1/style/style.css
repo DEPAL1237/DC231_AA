@@ -74,10 +74,11 @@ header .title {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  position: fixed;
+  position: absolute;
 }
 
 .sky {
+  z-index: 1;
   width: 100vw;
   height: 100vw;
   position: fixed;
@@ -130,6 +131,7 @@ img {
 }
 
 .card {
+  z-index: 2;
   cursor: pointer;
   min-width: 18.75rem;
   max-width: 18.75rem;
