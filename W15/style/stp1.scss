@@ -154,13 +154,30 @@ footer {
 
 #title {
   font-size: 50px;
-  filter: blur(0.1875rem);
-  transition: all 500ms ease-in-out;
+  // filter: blur(0.1875rem);
+  // transition: all 500ms ease-in-out;
+  font-family: "Song Myung", serif;
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translate3d(0, 100%, 0);
+    }
+    to {
+      opacity: 1;
+      transform: translateZ(0);
+    }
+  }
+
+  .test_obj {
+    position: relative;
+    animation: fadeInUp 1s;
+  }
 }
-#title:hover {
-  filter: blur(0);
-  transition: all 500ms ease-in-out;
-}
+
+// #title:hover {
+//   filter: blur(0);
+//   transition: all 500ms ease-in-out;
+// }
 
 #section3 {
   h3.animTarget {
