@@ -1,0 +1,19 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+.menu {
+  color: rgb(0, 0, 0);
+  font-size: 18px;
+  padding: 16px 16px;
+  background-color: rgb(214, 234, 209);
+  display: flex;
+  justify-content: space-between;
+}
+.menu .menu__top {
+  display: flex;
+  gap: 16px;
+}
