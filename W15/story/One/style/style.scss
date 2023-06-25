@@ -43,6 +43,10 @@ a {
   color: rgb(255, 255, 255);
 }
 
+li {
+  list-style: none;
+}
+
 .menu {
   color: white;
   padding: 16px;
@@ -52,19 +56,54 @@ a {
   font-family: "Song Myung", serif;
   font-size: 18px;
 
-  .menu__hm {
+  &__hm {
     padding: 30px;
   }
 
-  .menu__top {
+  &__top {
     display: flex;
     gap: 20px;
     padding: 30px;
   }
 
-  .menu__nav {
+  &__nav {
     z-index: 3 !important;
     background-color: #000f23;
+    padding: none;
+  }
+
+  .menu__pon {
+    overflow: hidden;
+  }
+
+  .menu__pon > li {
+    width: 100%;
+    float: left;
+    text-align: center;
+  }
+
+  .menu__pon a {
+    color: #fff;
+  }
+
+  .submenu > li {
+    margin-block: 5px;
+    padding-block: 5px;
+    line-height: 50px;
+  }
+
+  .submenu {
+    height: 0;
+    overflow: hidden;
+  }
+
+  .menu__pon > li:hover {
+    transition-duration: 0.5s;
+  }
+
+  .menu__pon > li:hover .submenu {
+    height: 500px;
+    transition-duration: 1s;
   }
 }
 

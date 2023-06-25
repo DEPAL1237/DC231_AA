@@ -16,12 +16,12 @@ a {
   color: rgb(255, 255, 255);
 }
 
-li {
-  list-style: none;
-}
-
 ::-webkit-scrollbar {
   display: none;
+}
+
+li {
+  list-style: none;
 }
 
 .menu {
@@ -46,6 +46,33 @@ li {
   background-color: #000f23;
   padding: none;
 }
+.menu .menu__pon {
+  overflow: hidden;
+}
+.menu .menu__pon > li {
+  width: 100%;
+  float: left;
+  text-align: center;
+}
+.menu .menu__pon a {
+  color: #fff;
+}
+.menu .submenu > li {
+  margin-block: 5px;
+  padding-block: 5px;
+  line-height: 50px;
+}
+.menu .submenu {
+  height: 0;
+  overflow: hidden;
+}
+.menu .menu__pon > li:hover {
+  transition-duration: 0.5s;
+}
+.menu .menu__pon > li:hover .submenu {
+  height: 500px;
+  transition-duration: 1s;
+}
 
 .text {
   font-family: "Song Myung", serif;
@@ -59,7 +86,7 @@ li {
   }
 }
 @media (min-width: 750px) {
-  .menu__dis {
+  .menu__pon {
     display: none;
   }
   .text {

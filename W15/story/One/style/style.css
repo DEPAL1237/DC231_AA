@@ -29,6 +29,10 @@ a {
   color: rgb(255, 255, 255);
 }
 
+li {
+  list-style: none;
+}
+
 .menu {
   color: white;
   padding: 16px;
@@ -38,17 +42,45 @@ a {
   font-family: "Song Myung", serif;
   font-size: 18px;
 }
-.menu .menu__hm {
+.menu__hm {
   padding: 30px;
 }
-.menu .menu__top {
+.menu__top {
   display: flex;
   gap: 20px;
   padding: 30px;
 }
-.menu .menu__nav {
+.menu__nav {
   z-index: 3 !important;
   background-color: #000f23;
+  padding: none;
+}
+.menu .menu__pon {
+  overflow: hidden;
+}
+.menu .menu__pon > li {
+  width: 100%;
+  float: left;
+  text-align: center;
+}
+.menu .menu__pon a {
+  color: #fff;
+}
+.menu .submenu > li {
+  margin-block: 5px;
+  padding-block: 5px;
+  line-height: 50px;
+}
+.menu .submenu {
+  height: 0;
+  overflow: hidden;
+}
+.menu .menu__pon > li:hover {
+  transition-duration: 0.5s;
+}
+.menu .menu__pon > li:hover .submenu {
+  height: 500px;
+  transition-duration: 1s;
 }
 
 @media (max-width: 750px) {
